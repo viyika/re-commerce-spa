@@ -21,6 +21,7 @@ jobs:
           path: build
           # The desired behavior if no files are found using the provided path.
   deploy:
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
