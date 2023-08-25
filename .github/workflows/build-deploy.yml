@@ -3,7 +3,6 @@ run-name: Build & Package By ${{github.actor}}
 on:
   push:
     branches: [ "main" ]
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,13 +18,16 @@ jobs:
         with:
           name: build-artifact
           path: build
-          # The desired behavior if no files are found using the provided path.
   deploy:
     needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
     steps:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v2.1.1
