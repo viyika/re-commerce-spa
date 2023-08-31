@@ -3,12 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Dashboard from './pages/Dashboard';
-import { RouterProvider, createBrowserRouter, redirect } from 'react-router-dom';
-import { Provider, useDispatch } from 'react-redux';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import store from './store/store';
 import Login from './pages/Login';
 import Logout from './pages/Logout';
-import { login } from './store/authSlice';
 
 const router = createBrowserRouter([
   {
