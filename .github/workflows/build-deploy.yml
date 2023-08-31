@@ -14,8 +14,8 @@ jobs:
           node-version: 16
       - run: npm install
       - run: npm run build
-        env:
-          PUBLIC_URL: /re-commerce-spa
+        # env:
+        #   PUBLIC_URL: /re-commerce-spa
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
         with:
