@@ -9,6 +9,7 @@ import store from './store/store';
 import Login from './pages/Login';
 import Logout from './pages/Logout';
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,7 +29,10 @@ const router = createBrowserRouter([
     path: "/logout",
     element: <Logout />
   }
-]);
+],
+{
+  basename: (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') ? "/" : "/re-commerce-spa",
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
